@@ -1,12 +1,12 @@
-import 'package:get_it/get_it.dart';
-import 'package:hydration/feature/splash/presentation/bloc/splash_bloc.dart';
 
+part of 'injector.dart';
 class Injector {
-  static final instance = GetIt.instance;
+  static final GetIt instance = GetIt.instance;
 
   static Future<void> init() async {
     //?BloC
     instance.registerFactory(() => SplashBloc());
+    instance.registerFactory(() => DashboardBloc());
 
     //*Use Cases
 
