@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hydration/core/constants/constants.dart';
 import 'package:hydration/core/widgets/loading/circle_loading.dart';
+import 'package:hydration/feature/splash/presentation/bloc/splash_bloc.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    context.read<SplashBloc>().add(FirstLoading());
     return Scaffold(
       body: Center(
         child: Column(
