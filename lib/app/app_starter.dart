@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hydration/core/injection/container.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hydration/app/app_bloc_observer.dart';
+import 'package:hydration/core/injection/injector.dart';
 
 import '../app/app.dart';
 
@@ -12,6 +14,11 @@ class AppStarter {
 
   static Future<void> run() async {
     await init();
-    runApp(const App());
+    BlocOverrides.runZoned(
+      () {
+        runApp(const App());
+      },
+      blocObserver: AppBlocObserver(),
+    );
   }
 }
