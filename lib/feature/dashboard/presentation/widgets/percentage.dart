@@ -12,10 +12,11 @@ class DashboardHydrationPercentage extends StatelessWidget {
     return BlocBuilder<DashboardBloc, DashboardState>(
         buildWhen: (previous, current) => current.hydrationTotal != previous.hydrationTotal,
         builder: (context, state) {
-          print(state.percentage);
-          return Positioned(
+          return AnimatedPositioned(
             left: Dimens.medium,
-            bottom: ((Dimens.height - 60) * state.percentage) + 20,
+            bottom: ((Dimens.height - 100) * state.percentage) + 20,
+            duration: const Duration(milliseconds: 450),
+            curve: Curves.easeInOut,
             child: Text('${(state.percentage * 100).toStringAsFixed(0)} %'),
           );
         });

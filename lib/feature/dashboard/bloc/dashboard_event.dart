@@ -11,4 +11,6 @@ class UpdateHydration extends DashboardEvent {
   final int drinkMl;
 
   const UpdateHydration(this.drinkMl);
+  @override
+  List<Object> get props => [drinkMl];
 }
