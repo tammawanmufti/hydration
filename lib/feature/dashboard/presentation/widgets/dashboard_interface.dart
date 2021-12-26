@@ -29,6 +29,7 @@ class DashboardInterface extends StatelessWidget {
                         style: const TextStyle(
                           color: AppColors.primary,
                           fontSize: Dimens.ultraLarge,
+                          
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -51,14 +52,11 @@ class DashboardInterface extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    if (state.percentage < 1) {
                       showDialog(
                           context: context,
                           builder: (context) {
                             return const DrinkDialog();
                           });
-                      // context.read<DashboardBloc>().add(const UpdateHydration(250));
-                    }
                   },
                   child: Container(
                     width: Dimens.doubleUltraLarge,
@@ -67,6 +65,8 @@ class DashboardInterface extends StatelessWidget {
                     child: const Icon(
                       Icons.add,
                       size: Dimens.extraLarge,
+                      color: AppColors.primary
+                      
                     ),
                   ),
                 ),

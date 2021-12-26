@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/route_manager.dart';
 import 'package:hydration/core/injection/injector.dart';
+import 'package:hydration/core/themes/themes.dart';
 import 'package:hydration/feature/dashboard/bloc/dashboard_bloc.dart';
 import 'package:hydration/feature/splash/presentation/bloc/splash_bloc.dart';
 import 'package:hydration/routes/router.dart';
@@ -24,6 +25,9 @@ class App extends StatelessWidget {
       ],
       child: GetMaterialApp(
         title: AppConfig.name,
+        theme: AppThemes.light,
+        darkTheme: AppThemes.dark,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         getPages: Routes.pages,
         initialRoute: Routes.splashScreen,
