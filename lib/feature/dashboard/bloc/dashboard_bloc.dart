@@ -14,7 +14,6 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   }
 
   Future<DashboardState> _updateHydrationToState(UpdateHydration event) async {
-    print(state.hydrationTotal);
     return state.copyWith(hydrationTotal: state.hydrationTotal + event.drinkMl);
   }
 }

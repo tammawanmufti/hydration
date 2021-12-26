@@ -17,7 +17,7 @@ class WaterFill extends StatelessWidget {
             curve: Curves.easeInOut,
             width: Dimens.width,
             height: Dimens.height * state.percentage,
-            color: AppColors.secondary.withAlpha(180),
+            color: AppColors.secondary,
             duration: const Duration(milliseconds: 500),
           );
         },
