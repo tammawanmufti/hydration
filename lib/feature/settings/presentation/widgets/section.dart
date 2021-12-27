@@ -22,7 +22,7 @@ class Section extends StatelessWidget {
           ),
           width: double.infinity,
           decoration: BoxDecoration(
-              border: Border.all(width: 1, color: context.primaryColor),
+              border: Border.all(width: 1, color: context.primaryColor.withOpacity(.4)),
               borderRadius: BorderRadius.circular(Dimens.largeTiny)),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: Dimens.tiny),
@@ -46,7 +46,7 @@ class Section extends StatelessWidget {
           child: Text(
             ' $title ',
             style: TextStyle(
-              color: context.primaryColor,
+              color: context.primaryColor.withOpacity(.4),
               backgroundColor: context.backgroundColor,
               fontSize: Dimens.medium,
             ),

@@ -28,7 +28,7 @@ class DashboardInterface extends StatelessWidget {
                         '${state.hydrationTotal} ml',
                         style: const TextStyle(
                           color: AppColors.primary,
-                          fontSize: Dimens.ultraLarge,
+                          fontSize: Dimens.superLarge,
                           
                           fontWeight: FontWeight.bold,
                         ),

@@ -21,8 +21,15 @@ class PhysicalSection extends StatelessWidget {
             onChanged: (value) {},
           ),
         ),
-        const SettingItem(title: 'Bedtime', action: TimeInput()),
-        const SettingItem(title: 'Wake-up', action: TimeInput()),
+        SettingItem(
+            title: 'Bedtime',
+            action: TimeInput(
+              onChanged: (value) {
+                print(value);
+              },
+              initialTime: TimeOfDay.now(),
+            )),
+        // SettingItem(title: 'Wake-up', action: TimeInput()),
       ],
     );
   }
