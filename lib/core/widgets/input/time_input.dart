@@ -34,7 +34,7 @@ class _TimeInputState extends State<TimeInput> {
       onTap: () async {
         final result = await showTimePicker(
           context: context,
-          initialTime: TimeOfDay.now(),
+          initialTime: time.value ?? widget.initialTime,
         );
         time.value = result;
         widget.onChanged(result);
