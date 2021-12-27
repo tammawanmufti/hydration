@@ -22,10 +22,23 @@ class Section extends StatelessWidget {
           ),
           width: double.infinity,
           decoration: BoxDecoration(
-              border: Border.all(width: 1, color: context.primaryColor!),
+              border: Border.all(width: 1, color: context.primaryColor),
               borderRadius: BorderRadius.circular(Dimens.largeTiny)),
-          child: Column(
-            children: children,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: Dimens.tiny),
+            child: Column(
+              children: children
+                  .map(
+                    (child) => Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: Dimens.small,
+                        vertical: Dimens.tiny,
+                      ),
+                      child: child,
+                    ),
+                  )
+                  .toList(),
+            ),
           ),
         ),
         Positioned(

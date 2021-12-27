@@ -2,25 +2,67 @@ import 'package:flutter/material.dart';
 import 'package:hydration/core/constants/colors.dart';
 
 extension AppThemeExtension on BuildContext {
-  Color? dynamicColor({Color? dark, Color? light}) {
+  T _dynamic<T>({T? dark, T? light}) {
     if (Theme.of(this).brightness == Brightness.dark) {
-      return dark;
+      return dark!;
     } else {
-      return light;
+      return light!;
     }
   }
 
-  Color? get primaryColor {
+  Color dynamicColor({Color? dark, Color? light}) {
+    return _dynamic<Color>(
+      dark: dark,
+      light: light,
+    );
+  }
+
+  Gradient dynamicGradient({Gradient? dark, Gradient? light}) {
+    return _dynamic<Gradient>(
+      dark: dark,
+      light: light,
+    );
+  }
+
+  List<BoxShadow> dynamicShadow({List<BoxShadow>? dark, List<BoxShadow>? light}) {
+    return _dynamic<List<BoxShadow>>(
+      dark: dark,
+      light: light,
+    );
+  }
+
+  List<Color> get sunkenColors {
+    return _dynamic(dark: const [
+                Colors.black54,
+                Colors.black45,
+              ], light: const [
+                Colors.black26,
+                Colors.black12,
+              ],);
+  }
+
+  Color get primaryColor {
     return dynamicColor(
       dark: AppColors.background,
       light: AppColors.primary,
     );
   }
 
-  Color? get backgroundColor {
+  Color get backgroundColor {
     return dynamicColor(
       light: AppColors.background,
       dark: AppColors.primary,
+    );
+  }
+
+  List<BoxShadow> get outerShadow {
+    return dynamicShadow(light: Neumorphism.outerShadowLight, dark: Neumorphism.outerShadowDark);
+  }
+
+  List<Color> get innerShadowColor {
+    return _dynamic<List<Color>>(
+      dark: Neumorphism.shadowColorDark,
+      light: Neumorphism.shadowColorLight,
     );
   }
 }
