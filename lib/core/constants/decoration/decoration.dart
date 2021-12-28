@@ -8,20 +8,30 @@ class ThemedDecoration {
   final BuildContext context;
   ThemedDecoration(this.context);
 
-  Decoration get buttonOuterShadow {
+  Decoration get concaveDecoration {
     return BoxDecoration(
       color: context.backgroundColor,
       borderRadius: BorderRadius.circular(Dimens.atom),
-      boxShadow: context.outerShadow,
+      boxShadow: context.concaveShadow,
     );
   }
 
-  Decoration get buttonInnerShadow {
-    return ConceaveDecoration(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Dimens.atom),
-        ),
-        depression: 5,
-        colors: context.innerShadowColor);
+  Decoration get pressedDecoration {
+    
+    return PressedDecoration(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Dimens.atom),
+      ),
+      depression: 5,
+      colors: context.pressedColor,
+    );
+  }
+
+  Decoration get flatDecoration {
+    return BoxDecoration(
+      boxShadow: context.flatShadow,
+      color: context.backgroundColor,
+      borderRadius: BorderRadius.circular(Dimens.atom),
+    );
   }
 }

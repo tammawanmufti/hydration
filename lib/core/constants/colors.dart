@@ -29,21 +29,29 @@ class Neumorphism {
     ];
   }
 
-  static List<Color> shadowColorLight = [
-    const Color(0xFFFFFFFF),
-    const Color(0xFFd9d9d9),
+  static List<Color> pressedShadowLight = [
+    const Color(0x22000000),
+    const Color(0x22000000),
   ];
-  static List<Color> shadowColorDark = [
+  static List<Color> pressedShadowDark = [
     const Color(0xFF0a406b),
     const Color(0xFF08304f),
   ];
 
-  static List<BoxShadow> outerShadowLight = _outerShadow(
+  static List<BoxShadow> concaveShadowLight = _outerShadow(
     dark: const Color(0xFFd9d9d9),
     light: const Color(0xFFFFFFFF),
   );
-  static List<BoxShadow> outerShadowDark = _outerShadow(
+  static List<BoxShadow> concaveShadowDark = _outerShadow(
     dark: const Color(0xFF08304f),
     light: const Color(0xFF0a406b),
+  );
+  static List<BoxShadow> flatShadowLight = _outerShadow(
+    dark: AppColors.background,
+    light: AppColors.background,
+  );
+  static List<BoxShadow> flatShadowDark = _outerShadow(
+    dark: AppColors.primary,
+    light: AppColors.primary,
   );
 }

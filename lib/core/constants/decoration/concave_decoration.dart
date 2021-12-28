@@ -2,12 +2,12 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-class ConceaveDecoration extends Decoration {
+class PressedDecoration extends Decoration {
   final ShapeBorder shape;
   final double depression;
   final List<Color> colors;
 
-  const ConceaveDecoration({
+  const PressedDecoration({
     required this.shape,
     required this.depression,
     required this.colors,

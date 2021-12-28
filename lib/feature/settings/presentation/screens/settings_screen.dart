@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hydration/feature/settings/presentation/widgets/account_section.dart';
+import 'package:hydration/feature/settings/presentation/widgets/app_section.dart';
 import 'package:hydration/feature/settings/presentation/widgets/physical_section.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -12,7 +14,7 @@ class SettingScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [PhysicalSection()],
+          children: const [PhysicalSection(), AppSection(), AccountSection()],
         ),
       ),
     );

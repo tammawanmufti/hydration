@@ -17,7 +17,7 @@ class SettingItem extends StatelessWidget {
           horizontal: Dimens.small,
         ),
         width: double.infinity,
-        decoration: themedDecoration.buttonOuterShadow,
+        decoration: themedDecoration.concaveDecoration,
         child: Row(
           children: [
             Expanded(
@@ -26,7 +26,7 @@ class SettingItem extends StatelessWidget {
                 title,
                 style: TextStyle(
                   color: context.primaryColor,
-                  fontSize: Dimens.extraMedium,
+                  fontSize: Dimens.medium,
                 ),
               ),
             ),

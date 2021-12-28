@@ -37,7 +37,7 @@ class _AppSwitchState extends State<AppSwitch> {
       child: Container(
         height: 20,
         width: 40,
-        decoration: ConceaveDecoration(
+        decoration: PressedDecoration(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(Dimens.extraLarge),
             ),
@@ -54,7 +54,7 @@ class _AppSwitchState extends State<AppSwitch> {
             child: Container(
               height: 20,
               width: 20,
-              decoration: ConceaveDecoration(
+              decoration: PressedDecoration(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(Dimens.extraLarge),
                   ),

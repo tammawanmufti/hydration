@@ -13,46 +13,49 @@ class Section extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          margin: const EdgeInsets.symmetric(
-            horizontal: Dimens.medium,
-            vertical: Dimens.tiny,
-          ),
-          width: double.infinity,
-          decoration: BoxDecoration(
-              border: Border.all(width: 1, color: context.primaryColor.withOpacity(.4)),
-              borderRadius: BorderRadius.circular(Dimens.largeTiny)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: Dimens.tiny),
-            child: Column(
-              children: children
-                  .map(
-                    (child) => Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: Dimens.small,
-                        vertical: Dimens.tiny,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: Dimens.small),
+      child: Stack(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(
+              horizontal: Dimens.medium,
+              vertical: Dimens.tiny,
+            ),
+            width: double.infinity,
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: context.primaryColor.withOpacity(.4)),
+                borderRadius: BorderRadius.circular(Dimens.largeTiny)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: Dimens.tiny),
+              child: Column(
+                children: children
+                    .map(
+                      (child) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: Dimens.small,
+                          vertical: Dimens.tiny,
+                        ),
+                        child: child,
                       ),
-                      child: child,
-                    ),
-                  )
-                  .toList(),
+                    )
+                    .toList(),
+              ),
             ),
           ),
-        ),
-        Positioned(
-          left: Dimens.extraLarge,
-          child: Text(
-            ' $title ',
-            style: TextStyle(
-              color: context.primaryColor.withOpacity(.4),
-              backgroundColor: context.backgroundColor,
-              fontSize: Dimens.medium,
+          Positioned(
+            left: Dimens.extraLarge,
+            child: Text(
+              ' $title ',
+              style: TextStyle(
+                color: context.primaryColor.withOpacity(.4),
+                backgroundColor: context.backgroundColor,
+                fontSize: Dimens.medium,
+              ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

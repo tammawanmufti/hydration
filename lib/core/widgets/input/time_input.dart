@@ -41,7 +41,7 @@ class _TimeInputState extends State<TimeInput> {
       },
       child: Container(
           padding: const EdgeInsets.all(Dimens.tiny),
-          decoration: ConceaveDecoration(
+          decoration: PressedDecoration(
             depression: 3,
             colors: context.sunkenColors,
             shape: RoundedRectangleBorder(

@@ -55,14 +55,21 @@ extension AppThemeExtension on BuildContext {
     );
   }
 
-  List<BoxShadow> get outerShadow {
-    return dynamicShadow(light: Neumorphism.outerShadowLight, dark: Neumorphism.outerShadowDark);
+  List<BoxShadow> get concaveShadow {
+    return dynamicShadow(light: Neumorphism.concaveShadowLight, dark: Neumorphism.concaveShadowDark);
   }
 
-  List<Color> get innerShadowColor {
+  List<Color> get pressedColor {
     return _dynamic<List<Color>>(
-      dark: Neumorphism.shadowColorDark,
-      light: Neumorphism.shadowColorLight,
+      dark: Neumorphism.pressedShadowDark,
+      light: Neumorphism.pressedShadowLight,
+    );
+  }
+
+  List<BoxShadow> get flatShadow {
+    return dynamicShadow(
+      light: Neumorphism.flatShadowLight,
+      dark: Neumorphism.flatShadowDark,
     );
   }
 }

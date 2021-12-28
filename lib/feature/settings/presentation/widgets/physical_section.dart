@@ -25,9 +25,15 @@ class PhysicalSection extends StatelessWidget {
             title: 'Bedtime',
             action: TimeInput(
               onChanged: (value) {
-                print(value);
+
               },
-              initialTime: TimeOfDay.now(),
+              initialTime: TimeOfDay.now(), //Todo: nullable
+            )),
+        SettingItem(
+            title: 'Wake-up ',
+            action: TimeInput(
+              onChanged: (value) {},
+              initialTime: TimeOfDay.now(), //Todo: nullable
             )),
         // SettingItem(title: 'Wake-up', action: TimeInput()),
       ],

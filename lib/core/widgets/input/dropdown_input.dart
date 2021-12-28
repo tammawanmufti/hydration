@@ -20,7 +20,7 @@ class _NumberInputState extends State<DropDownInput> {
         height: Dimens.extraLarge,
         width: widget.width,
         padding: const EdgeInsets.all(Dimens.tiny),
-        decoration: ConceaveDecoration(
+      decoration: PressedDecoration(
           depression: 3,
           colors: context.sunkenColors,
           shape: RoundedRectangleBorder(
@@ -38,6 +38,7 @@ class _NumberInputState extends State<DropDownInput> {
               child: Text('$index'),
             ),
           ).toList(),
-        ));
+      ),
+    );
   }
 }
