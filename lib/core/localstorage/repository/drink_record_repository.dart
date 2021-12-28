@@ -9,7 +9,7 @@ class DrinkRecordRepository extends LocalRepository<DrinkRecord> {
   DrinkRecordRepository._({required HiveInterface dataSource})
       : super(boxName: AppSettings.boxName, dataSource: dataSource);
 
-  static Future<DrinkRecordRepository> create({required dataSource}) async {
+  static Future<DrinkRecordRepository> create({required HiveInterface dataSource}) async {
     final repo = DrinkRecordRepository._(
       dataSource: dataSource,
     );
