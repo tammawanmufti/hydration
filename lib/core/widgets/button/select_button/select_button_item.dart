@@ -61,7 +61,7 @@ class SelectButtonItem<T> extends StatelessWidget {
                         ),
                   // selected ? ThemedDecoration(context).flatDecoration : ThemedDecoration(context).concaveDecoration,
                   // duration: duration,
-                  child: Text(label ?? '', style: style(context).copyWith(fontSize: 12)),
+                  child: Text(label ?? '', style: style(context).copyWith(fontSize: 10)),
                 ),
               ),
             ],

@@ -54,7 +54,7 @@ extension AppThemeExtension on BuildContext {
   Color get switchOnColor {
     return dynamicColor(
       dark: Colors.white,
-      light: Colors.blue,
+      light: Colors.blue[700],
     );
   }
 
