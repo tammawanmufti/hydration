@@ -11,7 +11,7 @@ class AccountSection extends StatelessWidget {
     bool login = false;
     return Section(
       title: 'Account',
-      children: login
+      children: !login //Todo Session
           ? [
               SettingItem(title: 'Sign in with email', action: Container()),
               SettingItem(title: 'Connect with google', action: Container()),
