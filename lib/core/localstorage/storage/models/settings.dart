@@ -5,8 +5,12 @@ import 'package:hydration/core/localstorage/storage/models/base_entity.dart';
 
 import 'time.dart';
 
-@HiveType(typeId: settings, adapterName: 'Settings')
+part 'settings.g.dart';
+
+@HiveType(typeId: settingsAdapter, adapterName: 'AppSettingsAdapter')
 class AppSettings extends Equatable implements BaseEntity {
+  static const String boxName = 'settings';
+
   @override
   @HiveField(0)
   final int id;
@@ -27,7 +31,7 @@ class AppSettings extends Equatable implements BaseEntity {
   @HiveField(8)
   final List<int> drinkMeasureSet;
 
-  AppSettings({
+  const AppSettings({
     required this.id,
     required this.weight,
     required this.bedtime,

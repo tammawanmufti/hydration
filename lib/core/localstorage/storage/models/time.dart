@@ -3,7 +3,9 @@ import 'package:hive/hive.dart';
 import 'package:hydration/core/constants/hive/hive_types.dart';
 import 'package:hydration/core/localstorage/storage/models/base_entity.dart';
 
-@HiveType(typeId: time, adapterName: 'time')
+part 'time.g.dart';
+
+@HiveType(typeId: timeAdapter, adapterName: 'TimeAdapter')
 class Time extends Equatable implements BaseEntity {
   @override
   @HiveField(0)
@@ -15,14 +17,13 @@ class Time extends Equatable implements BaseEntity {
   @HiveField(2)
   final int minute;
 
-  Time({
+  const Time({
     required this.id,
     required this.hour,
     required this.minute,
   });
 
   @override
-  // TODO: implement props
   List<Object?> get props => [
         id,
         hour,
