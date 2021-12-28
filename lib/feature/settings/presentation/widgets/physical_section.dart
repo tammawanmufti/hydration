@@ -14,7 +14,7 @@ class PhysicalSection extends StatelessWidget {
       title: 'Personal',
       children: [
         SettingItem(
-          title: 'Weight',
+          title: 'Weight (Kg)',
           action: NumberInput(
             width: Dimens.megaLarge,
             value: 75,

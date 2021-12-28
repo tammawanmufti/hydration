@@ -8,8 +8,16 @@ class NumberInput extends StatefulWidget {
   final int maxLength;
   final int value;
   final double? width;
+  final String? suffix;
   final Function(int value) onChanged;
-  const NumberInput({Key? key, required this.onChanged, this.value = 0, this.maxLength = 3, this.width})
+  const NumberInput({
+    Key? key,
+    required this.onChanged,
+    this.value = 0,
+    this.maxLength = 3,
+    this.width,
+    this.suffix,
+  })
       : super(key: key);
 
   @override
@@ -21,7 +29,7 @@ class _NumberInputState extends State<NumberInput> {
 
   @override
   void initState() {
-    _controller = TextEditingController(text: widget.value.toString());
+    _controller = TextEditingController(text: "${widget.value}" + ((widget.suffix != null) ? ' ${widget.suffix}' : ''));
     super.initState();
   }
 
@@ -54,6 +62,7 @@ class _NumberInputState extends State<NumberInput> {
               maxLines: 1,
               cursorHeight: 10,
               cursorWidth: 1,
+              textAlign: TextAlign.end,
               inputFormatters: [LengthLimitingTextInputFormatter(widget.maxLength)],
               decoration: const InputDecoration(
                 border: InputBorder.none,

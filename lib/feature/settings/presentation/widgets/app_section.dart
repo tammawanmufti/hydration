@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hydration/core/constants/enums/setting_enum.dart';
+import 'package:hydration/core/widgets/button/select_button/select_button_item.dart';
 import 'package:hydration/core/widgets/switch/app_switch.dart';
 import 'package:hydration/feature/settings/presentation/widgets/section.dart';
 import 'package:hydration/feature/settings/presentation/widgets/setting_item.dart';
@@ -14,16 +16,37 @@ class AppSection extends StatelessWidget {
         SettingItem(
           title: 'Sync',
           action: AppSwitch(
+            value: true,
             onChanged: (value) {},
           ),
         ),
-        const SettingItem(
+        SettingItem(
           title: "Time Format",
-          action: Text("24 H | 12 H"), //Todo: Create Selection button
+          separate: true,
+          action: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: ['12 Hour', '24 Hour']
+                  .map<SelectButtonItem>((e) => SelectButtonItem(
+                        label: e,
+                        value: e,
+                        selected: true,
+                      ))
+                  .toList()),
         ),
-        const SettingItem(
+        SettingItem(
           title: "Unit",
-          action: Text("Imperial | Metric"), //Todo: Create Selection button
+          separate: true,
+          action: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: MeasureUnit.values
+                  .map<SelectButtonItem<int>>(
+                    (e) => SelectButtonItem<int>(
+                      label: e.name.substring(0, 1).toUpperCase() + e.name.substring(1),
+                      value: e.index,
+                      selected: true,
+                    ),
+                  )
+                  .toList()), //Todo: Create Selection button
         )
       ],
     );

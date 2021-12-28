@@ -32,19 +32,29 @@ extension AppThemeExtension on BuildContext {
   }
 
   List<Color> get sunkenColors {
-    return _dynamic(dark: const [
-                Colors.black54,
-                Colors.black45,
-              ], light: const [
-                Colors.black26,
-                Colors.black12,
-              ],);
+    return _dynamic(
+      dark: const [
+        Colors.black54,
+        Colors.black45,
+      ],
+      light: const [
+        Colors.black26,
+        Colors.black12,
+      ],
+    );
   }
 
   Color get primaryColor {
     return dynamicColor(
       dark: AppColors.background,
       light: AppColors.primary,
+    );
+  }
+
+  Color get switchOnColor {
+    return dynamicColor(
+      dark: Colors.white,
+      light: Colors.blue,
     );
   }
 

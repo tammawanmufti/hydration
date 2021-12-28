@@ -33,7 +33,13 @@ class _NeuBaseButtonState extends State<NeuBaseButton> {
             pressed = true;
           });
         },
+        onTapCancel: () {
+          setState(() {
+            pressed = false;
+          });
+        },
         onTapUp: (details) {
+          widget.onTap();
           setState(() {
             pressed = false;
           });
@@ -43,7 +49,8 @@ class _NeuBaseButtonState extends State<NeuBaseButton> {
               vertical: Dimens.tiny,
               horizontal: Dimens.small,
             ),
-            width: double.infinity,
+            height: widget.height,
+            width: widget.width,
             decoration:
                 pressed ? ThemedDecoration(context).flatDecoration : ThemedDecoration(context).concaveDecoration,
             duration: widget.duration,

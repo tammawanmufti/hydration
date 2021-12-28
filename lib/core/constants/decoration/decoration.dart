@@ -27,6 +27,7 @@ class ThemedDecoration {
     );
   }
 
+
   Decoration get flatDecoration {
     return BoxDecoration(
       boxShadow: context.flatShadow,
@@ -34,4 +35,8 @@ class ThemedDecoration {
       borderRadius: BorderRadius.circular(Dimens.atom),
     );
   }
+
+  
+
+
 }

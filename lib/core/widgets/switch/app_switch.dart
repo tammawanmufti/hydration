@@ -18,6 +18,8 @@ class AppSwitch extends StatefulWidget {
 
 class _AppSwitchState extends State<AppSwitch> {
   late bool value;
+  late AnimationController controller;
+  
 
   @override
   void initState() {
@@ -44,14 +46,24 @@ class _AppSwitchState extends State<AppSwitch> {
             depression: 3,
             colors: context.sunkenColors),
         child: AnimatedAlign(
-          duration: const Duration(milliseconds: 100),
+          duration: const Duration(milliseconds: 200),
           alignment: !value ? Alignment.centerLeft : Alignment.centerRight,
-          child: Container(
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 1000),
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: context.primaryColor,
-            ),
-            child: Container(
+                shape: BoxShape.circle,
+                color: context.switchOnColor,
+                boxShadow: value
+                    ? [
+                        BoxShadow(
+                          color: context.switchOnColor,
+                          spreadRadius: 0,
+                          blurRadius: 3,
+                        )
+                      ]
+                    : []),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 500),
               height: 20,
               width: 20,
               decoration: PressedDecoration(
@@ -60,9 +72,9 @@ class _AppSwitchState extends State<AppSwitch> {
                   ),
                   colors: const [
                     Colors.black26,
-                    Colors.black12,
+                    Colors.black,
                   ],
-                  depression: 3),
+                  depression: value ? 0.5 : 6),
             ),
           ),
         ),

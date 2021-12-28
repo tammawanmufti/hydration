@@ -17,8 +17,13 @@ class AccountSection extends StatelessWidget {
               SettingItem(title: 'Connect with google', action: Container()),
             ]
           : [
-              NeuTextButton(label: 'Sign Out'),
-              const SettingItem(title: 'Delete Account', action: Icon(Icons.delete_forever)),
+              NeuTextButton(
+                label: 'Sign Out',
+                onTap: () {
+                  print('Sign out !');
+                },
+              ),
+              NeuTextButton(label: 'Delete Account', onTap: () {})
             ],
     );
   }
