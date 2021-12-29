@@ -4,14 +4,14 @@ import 'package:hydration/core/localstorage/repository/local_repository.dart';
 import 'package:hydration/core/localstorage/storage/models/settings.dart';
 import 'package:hydration/core/localstorage/storage/models/time.dart';
 
-class SettingsRepository extends LocalRepository<AppSettings> {
+class SettingsLocalRepository extends LocalRepository<AppSettings> {
   bool _isInitialized = false;
 
-  SettingsRepository._({required HiveInterface dataSource})
+  SettingsLocalRepository._({required HiveInterface dataSource})
       : super(boxName: AppSettings.boxName, dataSource: dataSource);
 
-  static Future<SettingsRepository> create({required dataSource}) async {
-    final repo = SettingsRepository._(
+  static Future<SettingsLocalRepository> create({required HiveInterface dataSource}) async {
+    final repo = SettingsLocalRepository._(
       dataSource: dataSource,
     );
     await repo.init();

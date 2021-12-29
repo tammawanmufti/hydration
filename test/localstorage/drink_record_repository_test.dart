@@ -10,7 +10,7 @@ class MockBox extends Mock implements Box {}
 
 void main() {
   const boxName = 'DrinkRecordTest';
-  late DrinkRecordRepository repo;
+  late DrinkRecordLocalRepository repo;
   late MockHive mockHive;
   late MockBox mockBox;
 

@@ -3,14 +3,14 @@ import 'package:hydration/core/localstorage/repository/local_repository.dart';
 import 'package:hydration/core/localstorage/storage/models/drink_record.dart';
 import 'package:hydration/core/localstorage/storage/models/settings.dart';
 
-class DrinkRecordRepository extends LocalRepository<DrinkRecord> {
+class DrinkRecordLocalRepository extends LocalRepository<DrinkRecord> {
   bool _isInitialized = false;
 
-  DrinkRecordRepository._({required HiveInterface dataSource})
+  DrinkRecordLocalRepository._({required HiveInterface dataSource})
       : super(boxName: AppSettings.boxName, dataSource: dataSource);
 
-  static Future<DrinkRecordRepository> create({required HiveInterface dataSource}) async {
-    final repo = DrinkRecordRepository._(
+  static Future<DrinkRecordLocalRepository> create({required HiveInterface dataSource}) async {
+    final repo = DrinkRecordLocalRepository._(
       dataSource: dataSource,
     );
     await repo.init();
